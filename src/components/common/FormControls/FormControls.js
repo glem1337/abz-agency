@@ -13,9 +13,9 @@ export const Input = ({meta: {touched, error}, ...props}) => {
                 isInvalid={touched && error && true}
             />
             {(!touched || !error) && props.text && (
-            <Form.Text className="form__text">
-                {props.text}
-            </Form.Text>
+                <Form.Text className="form__text">
+                    {props.text}
+                </Form.Text>
             )}
             {touched && error && (
                 <Form.Text className="form__error form__text">
@@ -24,4 +24,29 @@ export const Input = ({meta: {touched, error}, ...props}) => {
             )}
         </>
     )
-}
+};
+
+export const RadioGroup = ({meta: {touched, error}, ...props}) => {
+    return (
+        <>
+            {props.fields.map(position => (
+                <Form.Check
+                    key={`position-${position.value}`}
+                    id={position.value}
+                    {...props.input}
+                    className={props.className}
+                    custom
+                    type={props.type}
+                    label={position.label}
+                    value={position.value}
+                    checked={+position.value === +props.selected}
+                />
+            ))}
+            {touched && error && (
+                <Form.Text className="form__error form__text">
+                    {error}
+                </Form.Text>
+            )}
+        </>
+    )
+};

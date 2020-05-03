@@ -1,9 +1,6 @@
 import React from "react";
-import RegisterForm from "./components/RegisterForm";
+import RegisterForm from "./RegisterForm/RegisterForm";
 import {Col, Container, Row} from "react-bootstrap";
-import {reduxForm} from "redux-form";
-
-const RegisterReduxForm = reduxForm({form: 'register'})(RegisterForm);
 
 const Register = ({handleSubmit, ...props}) => (
     <section id="register" className="register">
@@ -15,7 +12,7 @@ const Register = ({handleSubmit, ...props}) => (
                         Attention! After successful registration and alert, update the list of users in the block from
                         the top
                     </p>
-                    <RegisterReduxForm
+                    <RegisterForm
                         {...props}
                         onSubmit={handleSubmit}
                     />

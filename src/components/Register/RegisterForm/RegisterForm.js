@@ -1,13 +1,14 @@
 import React from "react";
 import {Form} from "react-bootstrap";
 import {Field, reduxForm} from 'redux-form'
-import {Input} from "../../common/FormControls/FormControls";
+import {Input, RadioGroup} from "../../common/FormControls/FormControls";
+import validator from '../../../utils/validators/validators';
 
 const RegisterForm = ({
         handleSubmit,
-        handleValidationName,
-        handleValidationEmail,
-        handleValidationPhone
+        positions,
+        onRadioInputChange,
+        positionId,
     }) => (
     <Form className={'form'} onSubmit={handleSubmit}>
 
@@ -19,7 +20,7 @@ const RegisterForm = ({
                 name={'name'}
                 type={'text'}
                 placeholder={'Your name'}
-                validate={handleValidationName}
+                validate={validator.name}
                 component={Input}
             />
         </Form.Group>
@@ -32,7 +33,7 @@ const RegisterForm = ({
                 name={'email'}
                 type={'email'}
                 placeholder={'Your email'}
-                validate={handleValidationEmail}
+                validate={validator.email}
                 component={Input}
             />
         </Form.Group>
@@ -46,9 +47,25 @@ const RegisterForm = ({
                 type={'phone'}
                 placeholder={'+380 XX XXX XX XX'}
                 text={'Еnter phone number in open format'}
-                validate={handleValidationPhone}
+                validate={validator.phone}
                 component={Input}
             />
+        </Form.Group>
+
+        <Form.Group>
+            <Form.Label>Select your position</Form.Label>
+
+            <Field
+                className={'form__checkbox'}
+                name={'position'}
+                type={'radio'}
+                validate={validator.position}
+                fields={positions}
+                onChange={onRadioInputChange}
+                component={RadioGroup}
+                selected={positionId}
+            />
+
         </Form.Group>
 
         {/*
@@ -166,6 +183,4 @@ const RegisterForm = ({
     </Form>
 );
 
-const RegisterReduxForm = reduxForm({form: 'login'})(RegisterForm);
-
-export default RegisterForm
+export default reduxForm({form: 'register'})(RegisterForm);
