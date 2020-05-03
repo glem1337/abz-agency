@@ -9,7 +9,7 @@ const Header = ({items}) => (
     <>
         <header className="header">
             <Container className={'header__container'}>
-                <a className="header__link" href="/#">
+                <a className="header__link" href="/abz-agency/">
                     <img
                         className="header__logo"
                         src={Logo}
