@@ -1,0 +1,152 @@
+/* base styles */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: $main-font;
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: rem(24);
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button:hover,
+button:focus,
+a:hover,
+a:focus {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: $primary-color;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: 100%;
+}
+
+h1, .h1 {
+  font-size: rem(30);
+  line-height: rem(24);
+  font-weight: normal;
+  @include for-size(tablet) {
+    font-size: rem(40);
+    line-height: rem(44);
+  }
+  @include for-size(desktop) {
+    font-size: rem(50);
+    line-height: rem(54);
+  }
+}
+
+h2, .h2 {
+  font-size: rem(24);
+  line-height: rem(29);
+  font-weight: normal;
+}
+
+p {
+  color: $paragraph-color;
+  margin: 0;
+}
+
+#root {
+  max-width: 2560px;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-padding-behavior-bottom: strict;
+}
+
+.button,
+button {
+  border: none;
+  display: block;
+  width: 100%;
+  max-width: rem(210);
+  padding: rem(7) 0;
+  background: $primary-color;
+  color: #fefefe;
+  text-decoration: none;
+  -webkit-border-radius: rem(4);
+  -moz-border-radius: rem(4);
+  border-radius: rem(4);
+  text-align: center;
+  font-size: rem(16);
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    background-color: $dark-primary-color;
+    color: #fefefe;
+    outline: none;
+  }
+
+  &--disabled,
+  &:disabled {
+    background-color: #d7d7d7;
+    color: #8d8c8c;
+  }
+}
+
+.container {
+  min-width: 360px;
+  margin: 0 auto;
+  @include for-size(mobile) {
+    max-width: none;
+  }
+  @include for-size(tablet) {
+    max-width: 768px;
+    padding-left: rem(30);
+    padding-right: rem(30);
+  }
+  @include for-size(desktop) {
+    max-width: 1024px;
+  }
+  @include for-size(desktop2k) {
+    max-width: 1170px;
+  }
+}
+
+.row {
+  @include for-size(tablet) {
+    margin-left: rem(-30);
+    margin-right: rem(-30);
+  }
+}
+
+[class*='col'] {
+  @include for-size(tablet) {
+    padding-left: rem(30);
+    padding-right: rem(30);
+  }
+}

@@ -1,0 +1,34 @@
+.about-me {
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+  @include for-size(tablet) {
+    padding-top: rem(122);
+    padding-bottom: rem(113);
+  }
+  @include for-size(desktop) {
+    padding-top: rem(150);
+    padding-bottom: rem(150);
+  }
+  &__title {
+    color: $text-color;
+    margin-bottom: rem(60);
+  }
+  &__wrapper-img-content {
+    display: flex;
+    align-items: center;
+  }
+  &__subtitle {
+    margin-bottom: rem(24);
+  }
+  &__text {
+    margin-bottom: rem(33);
+  }
+  &__button {
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 600;
+    &:hover {
+      color: $dark-primary-color;
+    }
+  }
+}

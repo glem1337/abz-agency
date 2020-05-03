@@ -1,0 +1,27 @@
+.register {
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+  @include for-size(tablet) {
+    padding-top: rem(115);
+    padding-bottom: rem(115);
+  }
+  @include for-size(desktop) {
+    padding-top: rem(160);
+    padding-bottom: rem(160);
+}
+  &__title {
+    @include for-size(desktop) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    @include for-size(tablet) {
+
+    }
+    @include for-size(desktop) {
+      margin-bottom: rem(80);
+    }
+  }
+}

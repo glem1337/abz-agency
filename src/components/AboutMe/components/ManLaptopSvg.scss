@@ -1,0 +1,28 @@
+.man-laptop-svg {
+
+  @include for-size(tablet) {
+
+  }
+  @include for-size(desktop) {
+    width: rem(339);
+    flex: 0 0 rem(339);
+    height: rem(285);
+  }
+
+  &__cogwheel {
+    animation: spin 5s linear 0s infinite;
+    &:first-child {
+      transform-origin: 22px 64px;
+    }
+    &:nth-child(2) {
+      transform-origin: 61px 43px;
+    }
+    &:nth-child(3) {
+      transform-origin: 25px 24px;
+    }
+  }
+}
+
+@keyframes spin {
+  100% {transform: rotate(-360deg);}
+}
