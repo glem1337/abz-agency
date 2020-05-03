@@ -1,6 +1,6 @@
 ## Тестовое задание на позицию front-end developer для компании  [abz.agency](https://abz.agency/).
 
-Ссылка на развернутый проект — [Create React App](https://github.com/facebook/create-react-app).
+ [Ссылка на развернутый проект](https://glem1337.github.io/abz-agency/).
 
 ## Технические требования
 - React / Vue / Angular (​version ​6+);
