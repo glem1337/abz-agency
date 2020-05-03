@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/abz-agency/static/css/main.f0d8afaa.chunk.css",
-    "main.js": "/abz-agency/static/js/main.1899dff4.chunk.js",
-    "main.js.map": "/abz-agency/static/js/main.1899dff4.chunk.js.map",
+    "main.css": "/abz-agency/static/css/main.dd097e16.chunk.css",
+    "main.js": "/abz-agency/static/js/main.b8b5a97e.chunk.js",
+    "main.js.map": "/abz-agency/static/js/main.b8b5a97e.chunk.js.map",
     "runtime-main.js": "/abz-agency/static/js/runtime-main.a33d765c.js",
     "runtime-main.js.map": "/abz-agency/static/js/runtime-main.a33d765c.js.map",
     "static/css/2.451bf2e4.chunk.css": "/abz-agency/static/css/2.451bf2e4.chunk.css",
-    "static/js/2.826f4578.chunk.js": "/abz-agency/static/js/2.826f4578.chunk.js",
-    "static/js/2.826f4578.chunk.js.map": "/abz-agency/static/js/2.826f4578.chunk.js.map",
+    "static/js/2.6c857686.chunk.js": "/abz-agency/static/js/2.6c857686.chunk.js",
+    "static/js/2.6c857686.chunk.js.map": "/abz-agency/static/js/2.6c857686.chunk.js.map",
     "index.html": "/abz-agency/index.html",
-    "precache-manifest.de7a5296a52a3a34e5d994bdbfd55b6a.js": "/abz-agency/precache-manifest.de7a5296a52a3a34e5d994bdbfd55b6a.js",
+    "precache-manifest.65a3b56d3a219a7165081b9b68c8e89e.js": "/abz-agency/precache-manifest.65a3b56d3a219a7165081b9b68c8e89e.js",
     "service-worker.js": "/abz-agency/service-worker.js",
     "static/css/2.451bf2e4.chunk.css.map": "/abz-agency/static/css/2.451bf2e4.chunk.css.map",
-    "static/css/main.f0d8afaa.chunk.css.map": "/abz-agency/static/css/main.f0d8afaa.chunk.css.map",
-    "static/js/2.826f4578.chunk.js.LICENSE.txt": "/abz-agency/static/js/2.826f4578.chunk.js.LICENSE.txt",
+    "static/css/main.dd097e16.chunk.css.map": "/abz-agency/static/css/main.dd097e16.chunk.css.map",
+    "static/js/2.6c857686.chunk.js.LICENSE.txt": "/abz-agency/static/js/2.6c857686.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/abz-agency/static/media/banner-photo_tablet.8d62c6b8.webp",
     "static/media/logo.svg": "/abz-agency/static/media/logo.146e2926.svg",
     "static/media/photo-cover.svg": "/abz-agency/static/media/photo-cover.3a41f082.svg"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.a33d765c.js",
     "static/css/2.451bf2e4.chunk.css",
-    "static/js/2.826f4578.chunk.js",
-    "static/css/main.f0d8afaa.chunk.css",
-    "static/js/main.1899dff4.chunk.js"
+    "static/js/2.6c857686.chunk.js",
+    "static/css/main.dd097e16.chunk.css",
+    "static/js/main.b8b5a97e.chunk.js"
   ]
 }
