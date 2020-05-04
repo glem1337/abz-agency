@@ -32,9 +32,21 @@ const position = position => {
     return undefined;
 };
 
+const photo = file => {
+    if (!file || +file.size > 5242880 ||
+        file.type !== 'image/jpeg' ||
+        file.width < 70 ||
+        file.height < 70
+    ) {
+        return 'File format jpg up to 5 MB, the minimum size of 70x70px';
+    }
+    return undefined;
+};
+
 export default {
     name,
     email,
     phone,
-    position
+    position,
+    photo
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Form} from "react-bootstrap";
 
 export const Input = ({meta: {touched, error}, ...props}) => {
@@ -31,11 +31,11 @@ export const RadioGroup = ({meta: {touched, error}, ...props}) => {
         <>
             {props.fields.map(position => (
                 <Form.Check
+                    custom
                     key={`position-${position.value}`}
-                    id={position.value}
+                    id={`position-${position.value}`}
                     {...props.input}
                     className={props.className}
-                    custom
                     type={props.type}
                     label={position.label}
                     value={position.value}
@@ -49,4 +49,54 @@ export const RadioGroup = ({meta: {touched, error}, ...props}) => {
             )}
         </>
     )
+};
+
+
+export class FileInput extends Component {
+
+    onChange = e => {
+        e.preventDefault();
+        const {input: {onChange}} = this.props;
+        let imageFile = e.target.files[0];
+        if (imageFile) {
+            const localImageUrl = URL.createObjectURL(imageFile);
+            const imageObject = new window.Image();
+            imageObject.onload = () => {
+                imageFile.width = imageObject.naturalWidth;
+                imageFile.height = imageObject.naturalHeight;
+                onChange(imageFile);
+                console.log(this.props)
+                URL.revokeObjectURL(imageFile);
+            };
+            imageObject.src = localImageUrl;
+        } else {
+            onChange(imageFile);
+        }
+    };
+
+    render() {
+
+        let {meta: {touched, dirty, error}, input: {value}, ...props} = this.props;
+
+        return (
+            <>
+                <Form.File
+                    custom
+                    {...props.input}
+                    id={props.id}
+                    className={props.className}
+                    label={props.label}
+                    onChange={this.onChange}
+                    type={props.type}
+                    accept={props.accept}
+                    isInvalid={(dirty || touched) && error && true}
+                />
+                {(dirty || touched) && error && (
+                    <Form.Text className="form__error form__text">
+                        {error}
+                    </Form.Text>
+                )}
+            </>
+        )
+    }
 };
