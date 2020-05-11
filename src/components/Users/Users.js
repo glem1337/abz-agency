@@ -1,6 +1,6 @@
 import React from 'react';
-import Loading from './components/Loading';
-import User from "./components/User";
+import Loading from '../common/Loading/Loading';
+import User from "./User/User";
 import {Col, Container, Row} from "react-bootstrap";
 
 const Users = ({usersList, nextUrl, handleNextUsersList, isFetching, error}) => (
@@ -18,7 +18,7 @@ const Users = ({usersList, nextUrl, handleNextUsersList, isFetching, error}) => 
                     </Col>
                 ))}
             </Row>
-            {nextUrl && isFetching && <Loading/>}
+            {isFetching && <Loading/>}
             {error && <div className="users__error">{error}</div>}
             {nextUrl && (
                 <button

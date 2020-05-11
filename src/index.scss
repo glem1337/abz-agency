@@ -6,13 +6,15 @@
 
 
 @import "components/Header/Header";
-@import "components/Header/components/DesktopMenu";
+@import "components/Header/DesktopMenu/DesktopMenu";
+@import "components/Header/MobileMenu/MobileMenu";
 @import "components/Banner/Banner";
 @import "components/AboutMe/AboutMe";
-@import "components/AboutMe/components/ManLaptopSvg";
+@import "components/AboutMe/ManLaptop/ManLaptopSvg";
 @import "components/Users/Users";
-@import "components/Users/components/User";
-@import "components/Users/components/Loading";
+@import "components/Users/User/User";
+@import "components/common/Loading/Loading";
 @import "components/Register/Register";
 @import "components/Register/RegisterForm/RegisterForm";
+@import "components/Register/SuccessModal/SuccessModal";
 @import "components/Footer/Footer";

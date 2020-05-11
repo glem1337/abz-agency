@@ -9,24 +9,24 @@ import Register from "../Register/RegisterContainer";
 import Footer from "../Footer/Footer";
 
 export default class App extends React.Component {
-  state = {};
+    state = {};
 
     componentDidMount() {
-        AOS.init({ offset: 80 });
+        AOS.init({offset: 80});
     }
 
-  render() {
-    return (
-        <>
-            <Header />
-            <main>
-                <Banner />
-                <AboutMe />
-                <Users />
-                <Register />
-                <Footer />
-            </main>
-        </>
-    );
-  }
+    render() {
+        return (
+            <>
+                <Header/>
+                <main>
+                    <Banner/>
+                    <AboutMe/>
+                    <Users/>
+                    <Register/>
+                </main>
+                <Footer/>
+            </>
+        );
+    }
 }

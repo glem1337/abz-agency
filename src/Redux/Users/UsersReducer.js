@@ -2,7 +2,7 @@ import types from './UsersActionTypes';
 
 const initialState = {
   users: [],
-  nextUrl: 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6',
+  nextUrl: '',
   isFetching: false,
   error: null
 };
@@ -32,6 +32,10 @@ const usersReducer = (state = initialState, { type, payload }) => {
         ...state,
         isFetching: false,
         error: `Error: ${payload.error}`
+      };
+    case types.RESET_USERS_DATA:
+      return {
+        ...initialState
       };
     default:
       return state;

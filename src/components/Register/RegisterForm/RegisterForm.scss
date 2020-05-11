@@ -1,37 +1,54 @@
 .form {
+  &__group {
+    margin-bottom: rem(18);
+
+    &--photo {
+      margin-top: rem(-10);
+    }
+  }
+
   &__control {
     color: #404040;
+
     &.is-invalid {
       background-image: none;
     }
+
     &::placeholder {
       color: #b2b9c0;
     }
+
     &:disabled {
       &::placeholder {
         color: #767e86;
       }
     }
   }
+
   &__file {
     label {
       color: #b2b9c0;
+
       &:after {
         background-color: #f8f7f5;
         color: $text-color;
       }
     }
   }
+
   &__checkbox {
     padding-bottom: rem(8);
   }
+
   &__text {
     color: $text-color;
     font-size: rem(12);
   }
+
   &__error {
     color: #f44336;
   }
+
   &__button {
     margin: 40px auto 0;
   }

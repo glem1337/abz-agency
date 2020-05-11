@@ -24,3 +24,7 @@ export const setUsers = usersList => ({
         usersList,
     },
 });
+
+export const resetUsersData = () => ({
+    type: types.RESET_USERS_DATA,
+});

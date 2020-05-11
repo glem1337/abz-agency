@@ -8,7 +8,12 @@ import usersSelectors from '../../Redux/Users/UsersSelectors';
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.handleNextUsersList();
+        const {getUsers} = this.props;
+        let nextUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6';
+        if (window.innerWidth < 768) {
+            nextUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=3';
+        }
+        getUsers(nextUrl);
     };
 
     handleNextUsersList = () => {

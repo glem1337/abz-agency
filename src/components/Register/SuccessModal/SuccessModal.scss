@@ -1,0 +1,12 @@
+.success-modal {
+  max-width: rem(340);
+  margin: 0 auto;
+
+  @include for-size(mobile) {
+    max-width: rem(395);
+  }
+
+  &__header {
+    padding: rem(12) rem(16);
+  }
+}

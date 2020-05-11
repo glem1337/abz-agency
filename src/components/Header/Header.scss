@@ -5,10 +5,29 @@
   width: 100%;
   background-color: $light-color;
   z-index: 2;
+
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: rem(60);
+    height: rem(40);
+
+    @include for-size(tablet) {
+      height: rem(60);
+    }
+  }
+}
+
+.menu-button {
+  border: none;
+  background: none;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include for-size(desktop) {
+    display: none;
   }
 }

@@ -3,7 +3,7 @@ import {Form} from "react-bootstrap";
 import {Field, reduxForm} from 'redux-form'
 import {Input, RadioGroup, FileInput} from "../../common/FormControls/FormControls";
 import validator from '../../../utils/validators/validators';
-import Loading from "../../Users/components/Loading";
+import Loading from "../../common/Loading/Loading";
 
 const RegisterForm = ({
                           handleSubmit,
@@ -11,11 +11,11 @@ const RegisterForm = ({
                           onRadioInputChange,
                           onFileInputChange,
                           positionId,
-                          photoFileName
+                          photoFileName,
                       }) => (
     <Form className={'form'} onSubmit={handleSubmit}>
 
-        <Form.Group>
+        <Form.Group className={'form__group'}>
             <Form.Label htmlFor={'form__name'}>Name</Form.Label>
             <Field
                 id={'form__name'}
@@ -28,7 +28,7 @@ const RegisterForm = ({
             />
         </Form.Group>
 
-        <Form.Group>
+        <Form.Group className={'form__group'}>
             <Form.Label htmlFor={'form__email'}>Email</Form.Label>
             <Field
                 id={'form__email'}
@@ -41,7 +41,7 @@ const RegisterForm = ({
             />
         </Form.Group>
 
-        <Form.Group>
+        <Form.Group className={'form__group'}>
             <Form.Label htmlFor={'form__phone'}>Phone number</Form.Label>
             <Field
                 id={'form__phone'}
@@ -55,7 +55,7 @@ const RegisterForm = ({
             />
         </Form.Group>
 
-        <Form.Group>
+        <Form.Group className={'form__group'}>
             <Form.Label>Select your position</Form.Label>
             {positions.length === 0 && <Loading/>}
             {positions.length > 0 && (
@@ -72,7 +72,8 @@ const RegisterForm = ({
             )}
         </Form.Group>
 
-        <Form.Group>
+        <Form.Group className={'form__group form__group--photo'}>
+            <Form.Label htmlFor={'form__file'}>Photo</Form.Label>
             <Field
                 id={'form__file'}
                 className={'form__file form__control'}
@@ -90,14 +91,10 @@ const RegisterForm = ({
             <button className={'form__button button'} type="submit">
                 Sing up now
             </button>
-            {/*{(messageAfterAddUser !== 'New user successfully registered') && (
-                <Form.Text className="form__error form__text">
-
-                </Form.Text>
-            )}*/}
         </Form.Group>
-
     </Form>
 );
 
-export default reduxForm({form: 'register'})(RegisterForm);
+export default reduxForm({
+    form: 'register'
+})(RegisterForm);

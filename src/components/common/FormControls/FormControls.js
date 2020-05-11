@@ -65,7 +65,6 @@ export class FileInput extends Component {
                 imageFile.width = imageObject.naturalWidth;
                 imageFile.height = imageObject.naturalHeight;
                 onChange(imageFile);
-                console.log(this.props)
                 URL.revokeObjectURL(imageFile);
             };
             imageObject.src = localImageUrl;

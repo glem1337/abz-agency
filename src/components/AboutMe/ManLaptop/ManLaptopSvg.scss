@@ -1,12 +1,21 @@
 .man-laptop-svg {
+  width: rem(289);
+  flex: 0 0 rem(289);
+  height: rem(243);
+  margin: 0 auto;
 
   @include for-size(tablet) {
-
+    width: rem(247);
+    flex: 0 0 rem(247);
+    height: rem(207);
   }
+
   @include for-size(desktop) {
     width: rem(339);
     flex: 0 0 rem(339);
     height: rem(285);
+    display: block;
+    margin-left: auto;
   }
 
   &__cogwheel {

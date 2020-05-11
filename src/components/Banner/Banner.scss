@@ -1,48 +1,109 @@
 .no-webp .banner {
   background-image: url('../../assets/images/banner-photo_mobile.jpg');
+
+  @include retinaSmall() {
+    background-image: url('../../assets/images/banner-photo_mobile_2x.jpg');
+  }
+
   @include for-size(tablet) {
     background-image: url('../../assets/images/banner-photo_tablet.jpg');
   }
-  @include for-size(desktop2k) {
+
+  @include retinaMedium() {
+    background-image: url('../../assets/images/banner-photo_tablet_2x.jpg');
+  }
+
+  @include for-size(desktop) {
     background-image: url('../../assets/images/banner-photo.jpg');
   }
+
+  @include retinaLarge() {
+    background-image: url('../../assets/images/banner-photo_2x.jpg');
+  }
 }
+
 .webp .banner {
   background-image: url('../../assets/images/banner-photo_mobile.webp');
-  @include for-size(tablet) {
-  background-image: url('../../assets/images/banner-photo_tablet.webp');
+
+  @include retinaSmall() {
+    background-image: url('../../assets/images/banner-photo_mobile_2x.webp');
   }
-  @include for-size(desktop2k) {
+
+  @include for-size(tablet) {
+    background-image: url('../../assets/images/banner-photo_tablet.webp');
+  }
+
+  @include retinaMedium() {
+    background-image: url('../../assets/images/banner-photo_tablet_2x.webp');
+  }
+
+  @include for-size(desktop) {
     background-image: url('../../assets/images/banner-photo.webp');
-    }
+  }
+
+  @include retinaLarge() {
+    background-image: url('../../assets/images/banner-photo_2x.webp');
+  }
 }
 
 .banner {
   min-height: rem(400);
-  margin-top: rem(60);
+  margin-top: rem(40);
   display: flex;
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   @include for-size(tablet) {
     min-height: rem(500);
+    margin-top: rem(60);
   }
+
   @include for-size(desktop) {
     min-height: rem(600);
   }
+
   &__inner {
     width: 100%;
+    text-align: center;
+
+    @include for-size(tablet) {
+      text-align: left;
+    }
+
     @include for-size(desktop) {
       padding-right: rem(35);
     }
   }
+
   &__title {
     color: $light-color;
-    margin-bottom: 30px;
+    margin-bottom: rem(14);
     text-transform: uppercase;
+    padding: 0 rem(5);
+
+    @include for-size(tablet) {
+      margin-bottom: rem(18);
+      padding: 0;
+      position: relative;
+      top: rem(-9);
+    }
   }
+
   &__text {
     color: $light-color;
-    margin-bottom: rem(35);
+    margin-bottom: rem(22);
+
+    @include for-size(tablet) {
+      margin-bottom: rem(33);
+    }
+  }
+
+  &__button {
+    display: inline-block;
+
+    @include for-size(tablet) {
+      display: block;
+    }
   }
 }

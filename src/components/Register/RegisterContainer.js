@@ -1,18 +1,25 @@
 import React from "react";
 import Register from './Register';
 import {usersApi} from "../../api/api";
+import {reset} from 'redux-form'
+import {connect} from "react-redux";
+import usersOperations from '../../Redux/Users/UsersOperations';
 
+const INITIAL_STATE = {
+    photoFileName: 'Upload your photo',
+    positionId: null,
+    modalMessage: '',
+    modalShow: false
+};
 
 class RegisterContainer extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            positionId: null,
+            ...INITIAL_STATE,
             positions: [],
-            photoFileName: 'Upload your photo',
         };
-        this.fileInput = React.createRef();
     }
 
     componentDidMount = async () => {
@@ -32,27 +39,80 @@ class RegisterContainer extends React.Component {
         this.setState({
             photoFileName: (file && file.name) || 'Upload your photo',
         });
-        //console.log(file)
     };
 
-    handleSubmit = (values) => {
-        console.log(values)
+    handleSubmit = async (values, dispatch) => {
+        const token = await usersApi.getToken();
+        values.token = token;
+        const userAddResponse = await usersApi.addUser(values)
+        const {updateUsers} = this.props;
+
+        let nextUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6';
+        if (window.innerWidth < 768) {
+            nextUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=3';
+        }
+
+        switch (userAddResponse) {
+            case 'New user successfully registered':
+                this.setState({
+                    ...INITIAL_STATE,
+                });
+                dispatch(reset('register'));
+                updateUsers(nextUrl);
+                break;
+            case 'Network Error':
+                this.setState({
+                    modalMessage: 'Network Error',
+                });
+                break;
+            case 'Request failed with status code 401':
+                this.setState({
+                    modalMessage: 'The token expired',
+                });
+                break;
+            case 'Request failed with status code 409':
+                this.setState({
+                    modalMessage: 'User with this phone or email already exist',
+                });
+                break;
+            case 'Request failed with status code 422':
+                this.setState({
+                    modalMessage: 'Validation failed',
+                });
+                break;
+            default:
+                break;
+        }
+        this.setState({
+            modalShow: true
+        });
+
+    };
+
+    handleCloseModal = () => {
+        this.setState({modalShow: false});
     };
 
     render() {
         return (
             <Register
                 positions={this.state.positions}
-                fileInputRef={this.fileInput}
                 positionId={this.state.positionId}
                 photoFileName={this.state.photoFileName}
                 onFileInputChange={this.onFileInputChange}
                 onRadioInputChange={this.onRadioInputChange}
                 handleSubmit={this.handleSubmit}
+                modalShow={this.state.modalShow}
+                handleCloseModal={this.handleCloseModal}
+                modalMessage={this.state.modalMessage}
             />
         );
     }
 
 }
 
-export default RegisterContainer;
+const mapDispatchToProps = {
+    updateUsers: usersOperations.updateUsers,
+};
+
+export default connect(null, mapDispatchToProps)(RegisterContainer);

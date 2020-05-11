@@ -9,8 +9,8 @@
     display: flex;
   }
   &__item {
-    margin-left: rem(30);
-    &--is-active {
+    margin-left: rem(29);
+    &.is-active {
       a {
         color: $secondary-color;
       }

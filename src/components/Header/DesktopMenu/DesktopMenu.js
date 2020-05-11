@@ -8,7 +8,7 @@ const DesktopMenu = ({items}) => (
             <Scrollspy
                 items={items.map(item => (item.url))}
                 offset={-60}
-                currentClassName="desktop-menu__item--is-active"
+                currentClassName="is-active"
                 className="desktop-menu__list"
             >
                 {items.map((item, index) => (

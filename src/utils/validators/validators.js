@@ -16,7 +16,7 @@ const email = email => {
 };
 
 const phone = phone => {
-    const patternPhone = /^\+?3?8?(0\d{9})$/;
+    const patternPhone = /^[\+]{0,1}380([0-9]{9})$/;
     if (!phone) {
         return 'Phone is required field';
     } else if (!patternPhone.test(phone)) {
@@ -33,7 +33,8 @@ const position = position => {
 };
 
 const photo = file => {
-    if (!file || +file.size > 5242880 ||
+    if (!file ||
+        +file.size > 5242880 ||
         file.type !== 'image/jpeg' ||
         file.width < 70 ||
         file.height < 70

@@ -57,7 +57,7 @@ input {
 
 h1, .h1 {
   font-size: rem(30);
-  line-height: rem(24);
+  line-height: rem(34);
   font-weight: normal;
   @include for-size(tablet) {
     font-size: rem(40);
@@ -87,8 +87,7 @@ p {
   overflow-padding-behavior-bottom: strict;
 }
 
-.button,
-button {
+.button {
   border: none;
   display: block;
   width: 100%;
@@ -115,6 +114,23 @@ button {
   &:disabled {
     background-color: #d7d7d7;
     color: #8d8c8c;
+  }
+}
+
+.btn-primary {
+  background: $primary-color;
+  border-color: $primary-color;
+  &:hover,
+  &:focus,
+  &:active,
+  &:not(:disabled),
+  &:not(:disabled):not(.disabled):active {
+    background: $dark-primary-color;
+    border-color: $dark-primary-color;
+  }
+  &:focus,
+  &:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
   }
 }
 

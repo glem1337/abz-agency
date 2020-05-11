@@ -5,9 +5,10 @@ import Header from './Header';
 export default class HeaderContainer extends React.Component {
 
     state = {
+        isMenuOpen: false,
         items: [
             {url: 'banner', text: ''},
-            {url: 'about-me', text: 'About Me'},
+            {url: 'about-me', text: 'About me'},
             {url: 'relationships', text: 'Relationships'},
             {url: 'requirements', text: 'Requirements'},
             {url: 'users', text: 'Users'},
@@ -15,10 +16,19 @@ export default class HeaderContainer extends React.Component {
         ]
     };
 
+    onToggleMenu = () => {
+        this.setState(prevState => ({isMenuOpen: !prevState.isMenuOpen}));
+    };
+
+
     render() {
-      const {items} = this.state;
+        const {items, isMenuOpen} = this.state;
         return (
-            <Header items={items}/>
+            <Header
+                onToggleMenu={this.onToggleMenu}
+                isMenuOpen={isMenuOpen}
+                items={items}
+            />
         );
     }
 }

@@ -1,27 +1,44 @@
 .register {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
+  padding-top: rem(77);
+  padding-bottom: rem(65);
+
   @include for-size(tablet) {
-    padding-top: rem(115);
-    padding-bottom: rem(115);
+    padding-top: rem(112);
+    padding-bottom: rem(103);
   }
+
   @include for-size(desktop) {
-    padding-top: rem(160);
-    padding-bottom: rem(160);
-}
+    padding-top: rem(152);
+    padding-bottom: rem(149);
+  }
+
   &__title {
+    margin-bottom: rem(16);
+
     @include for-size(desktop) {
-      margin-bottom: rem(25);
+      margin-bottom: rem(18);
     }
   }
 
   &__subtitle {
     text-align: center;
-    @include for-size(tablet) {
+    margin-bottom: rem(25);
 
-    }
     @include for-size(desktop) {
-      margin-bottom: rem(80);
+      margin-bottom: rem(25);
+    }
+  }
+
+  &__form {
+
+    @include for-size(tablet) {
+      padding-left: rem(26);
+      padding-right: rem(26);
+    }
+
+    @include for-size(desktop) {
+      padding-left: rem(22);
+      padding-right: rem(22);
     }
   }
 }

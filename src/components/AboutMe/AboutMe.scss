@@ -1,32 +1,62 @@
 .about-me {
-  padding-top: rem(80);
+  padding-top: rem(76);
   padding-bottom: rem(80);
+
   @include for-size(tablet) {
-    padding-top: rem(122);
-    padding-bottom: rem(113);
+    padding-top: rem(114);
+    padding-bottom: rem(115);
   }
+
   @include for-size(desktop) {
-    padding-top: rem(150);
-    padding-bottom: rem(150);
+    padding-top: rem(152);
+    padding-bottom: rem(156);
   }
+
+  &__wrapper-content {
+    margin-top: rem(34);
+
+    @include for-size(tablet) {
+      margin-top: 0;
+      padding-left: 0;
+      position: relative;
+      left: rem(-12);
+    }
+  }
+
   &__title {
     color: $text-color;
-    margin-bottom: rem(60);
+    margin-bottom: rem(35);
+
+    @include for-size(tablet) {
+      margin-bottom: rem(70);
+    }
   }
+
   &__wrapper-img-content {
     display: flex;
     align-items: center;
   }
+
   &__subtitle {
-    margin-bottom: rem(24);
+    margin-bottom: rem(18);
   }
+
   &__text {
-    margin-bottom: rem(33);
+    margin-bottom: rem(25);
+    text-align: justify;
   }
+
   &__button {
     text-decoration: none;
     color: $primary-color;
     font-weight: 600;
+    text-align: center;
+    display: block;
+
+    @include for-size(tablet) {
+      display: inline-block;
+    }
+
     &:hover {
       color: $dark-primary-color;
     }

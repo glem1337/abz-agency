@@ -1,35 +1,51 @@
 .users {
-  padding-top: rem(80);
+  padding-top: rem(72);
   padding-bottom: rem(80);
   background-color: $bg-color;
+
   @include for-size(tablet) {
     padding-top: rem(115);
-    padding-bottom: rem(115);
+    padding-bottom: rem(120);
   }
+
   @include for-size(desktop) {
-    padding-top: rem(160);
+    padding-top: rem(152);
     padding-bottom: rem(160);
   }
+
   &__title {
     text-align: center;
-    @include for-size(desktop) {
-      margin-bottom: rem(25);
+
+    @include for-size(tablet) {
+      margin-bottom: rem(18);
     }
   }
+
   &__subtitle {
     text-align: center;
-    @include for-size(tablet) {
+    margin-bottom: rem(38);
 
+    @include for-size(tablet) {
+      margin-bottom: rem(74);
     }
+
     @include for-size(desktop) {
-      margin-bottom: rem(80);
+      margin-bottom: rem(74);
     }
   }
+
   &__button {
     width: 100%;
-    padding: rem(10) 0;
-    margin: 0 auto;
+    padding: rem(7) 0;
+    margin: rem(-8) auto 0;
+    position: relative;
+    z-index: 1;
+
+    @include for-size(tablet) {
+      margin: rem(-20) auto 0;
+    }
   }
+
   &__error {
     color: $primary-color;
     margin: rem(20) 0;

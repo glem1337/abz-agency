@@ -17,7 +17,9 @@ const User = ({user}) => (
             <p className="user__position">{user.position}</p>
             <p className="user__email" data-tip={user.email}>{user.email}</p>
             <ReactTooltip border={false} place={'bottom'} className={'user__tooltip'}/>
-            <p className="user__phone">{user.phone}</p>
+            <p className="user__phone">{
+                user.phone.replace(/(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5')}
+            </p>
         </div>
     </div>
 

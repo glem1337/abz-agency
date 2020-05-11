@@ -1,17 +1,24 @@
 .user {
-  padding-bottom: rem(30);
+  padding-bottom: rem(38);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: rem(220);
+  margin: 0 auto;
+
   @include for-size(tablet) {
-    margin: 0 auto;
     width: rem(200);
-    padding-bottom: rem(65);
+    padding-bottom: rem(56);
   }
+
+  @include for-size(desktop) {
+    padding-bottom: rem(51);
+  }
+
   &__photo {
     border: 2px solid $light-color;
-    margin: 0 auto rem(20);
+    margin: 0 auto rem(15);
     width: rem(70);
     height: rem(70);
     border-radius: 50%;
@@ -20,18 +27,22 @@
 
     }
   }
+
   &__name {
-    margin-bottom: rem(17);
+    margin-bottom: rem(10);
     text-overflow: ellipsis;
     overflow: hidden;
   }
+
   &__position {
   }
+
   &__email {
     text-overflow: ellipsis;
     overflow: hidden;
     cursor: pointer;
   }
+
   .user__tooltip {
     border: none;
     -webkit-border-radius: 4px;
@@ -42,6 +53,7 @@
     color: #fefefe;
     background: #323231;
     box-shadow: rem(0) rem(3) rem(5) rgba(#323231, .1);
+
     &:before, &:after {
       display: none;
     }

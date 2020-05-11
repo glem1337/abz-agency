@@ -18,6 +18,52 @@
   }
 }
 
+@mixin retinaSmall() {
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: $mobile),
+  only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: $mobile),
+  only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: $mobile),
+  only screen and (        min-device-pixel-ratio: 2)      and (min-width: $mobile),
+  only screen and (                min-resolution: 192dpi) and (min-width: $mobile),
+  only screen and (                min-resolution: 2dppx)  and (min-width: $mobile) {
+
+    /* Small screen, retina, stuff to override above media query */
+    @content;
+
+  }
+}
+
+@mixin retinaMedium() {
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: $tablet),
+  only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: $tablet),
+  only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: $tablet),
+  only screen and (        min-device-pixel-ratio: 2)      and (min-width: $tablet),
+  only screen and (                min-resolution: 192dpi) and (min-width: $tablet),
+  only screen and (                min-resolution: 2dppx)  and (min-width: $tablet) {
+
+    /* Medium screen, retina, stuff to override above media query */
+    @content;
+  }
+}
+
+@mixin retinaLarge() {
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: $desktop),
+  only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: $desktop),
+  only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: $desktop),
+  only screen and (        min-device-pixel-ratio: 2)      and (min-width: $desktop),
+  only screen and (                min-resolution: 192dpi) and (min-width: $desktop),
+  only screen and (                min-resolution: 2dppx)  and (min-width: $desktop) {
+
+    /* Large screen, retina, stuff to override above media query */
+    @content;
+
+  }
+}
+
+
+
 @function rem($size) {
   $remSize: $size / 16;
   @return #{$remSize}rem;
