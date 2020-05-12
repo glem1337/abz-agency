@@ -10,6 +10,7 @@
 - node-sass;
 - react-bootstrap;
 - react-redux;
+- redux;
 - redux-form;
 - redux-thunk;
 - react-tooltip;
