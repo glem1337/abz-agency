@@ -1,6 +1,22 @@
 ## Тестовое задание на позицию front-end developer для компании  [abz.agency](https://abz.agency/).
 
  [Ссылка на развернутый проект](https://glem1337.github.io/abz-agency/).
+ 
+ 
+
+## Использовал инструменты
+- React;
+- react-create-app;
+- node-sass;
+- react-bootstrap;
+- react-redux;
+- redux-form;
+- redux-thunk;
+- react-tooltip;
+- react-scrollspy;
+- axios;
+- aos;
+
 
 ## Технические требования
 - React / Vue / Angular (​version ​6+);
