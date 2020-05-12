@@ -5,6 +5,7 @@
  
 
 ## Использовал инструменты
+- node version 10.15.3
 - React;
 - react-create-app;
 - node-sass;
