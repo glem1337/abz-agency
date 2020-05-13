@@ -39,10 +39,6 @@ const AboutMe = () => (
                 </Col>
             </Row>
         </Container>
-        <div className="about-me__wrapper-img-content">
-
-
-        </div>
     </section>
 );
 

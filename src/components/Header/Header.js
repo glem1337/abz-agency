@@ -1,9 +1,8 @@
 import React from 'react';
-import {Container} from "react-bootstrap";
-import DesktopMenu from './DesktopMenu/DesktopMenu';
 import Logo from '../../assets/logo/logo.svg';
 import MenuIcon from '../../assets/icons/menu-icon.svg';
-import MobileMenu from "./MobileMenu/MobileMenuContainer";
+import {Container} from "react-bootstrap";
+import {MenuContainer as Menu} from './Menu/MenuContainer';
 
 const Header = ({items, onToggleMenu, isMenuOpen}) => (
     <>
@@ -23,15 +22,9 @@ const Header = ({items, onToggleMenu, isMenuOpen}) => (
                     type="button"
                     onClick={onToggleMenu}
                 >
-                    <img src={MenuIcon} />
+                    <img src={MenuIcon}/>
                 </button>
-                <DesktopMenu items={items}/>
-                {isMenuOpen && (
-                    <MobileMenu
-                        onCloseMenu={onToggleMenu}
-                        items={items}
-                    />
-                )}
+                <Menu onCloseMenu={onToggleMenu} isMenuOpen={isMenuOpen} items={items}/>
             </Container>
         </header>
     </>

@@ -81,6 +81,7 @@ p {
 }
 
 #root {
+  min-width: 360px;
   max-width: 2560px;
   margin: 0 auto;
   -webkit-overflow-scrolling: touch;
@@ -135,7 +136,6 @@ p {
 }
 
 .container {
-  min-width: 360px;
   margin: 0 auto;
   @include for-size(mobile) {
     max-width: none;

@@ -18,6 +18,7 @@
 - react-scrollspy;
 - axios;
 - aos;
+- classnames;
 
 
 ## Технические требования
