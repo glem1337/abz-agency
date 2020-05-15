@@ -1,4 +1,4 @@
-## Тестовое задание на позицию front-end developer для компании  [abz.agency](https://abz.agency/).
+## Тестовое задание на позицию front-end developer
 
  [Ссылка на развернутый проект](https://glem1337.github.io/abz-agency/).
  
