@@ -19,6 +19,8 @@
 - axios;
 - aos;
 - classnames;
+- jest;
+- enzyme;
 
 
 ## Технические требования

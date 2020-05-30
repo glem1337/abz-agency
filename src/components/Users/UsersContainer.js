@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
-import Users from './Users';
+import UsersList from './UsersList/UsersList';
 import usersOperations from '../../Redux/Users/UsersOperations';
 import usersSelectors from '../../Redux/Users/UsersSelectors';
+import {Container} from "react-bootstrap";
+import Loading from "../common/Loading/Loading";
 
-class UsersContainer extends React.Component {
+export class UsersContainer extends React.Component {
 
     componentDidMount() {
         const {getUsers} = this.props;
@@ -24,13 +25,27 @@ class UsersContainer extends React.Component {
     render() {
         const {usersList, error, isFetching, nextUrl} = this.props;
         return (
-            <Users
-                nextUrl={nextUrl}
-                usersList={usersList}
-                handleNextUsersList={this.handleNextUsersList}
-                error={error}
-                isFetching={isFetching}
-            />
+            <section id="users" className="users">
+                <Container>
+                    <h2 className="users__title h1">Our cheerful users</h2>
+                    <p className="users__subtitle">
+                        Attention! Sorting users by registration date
+                    </p>
+                    {usersList && !!usersList.length && <UsersList usersList={usersList}/>}
+                    {isFetching && <Loading/>}
+                    {error && <div className="users__error">{error}</div>}
+                    {nextUrl && (
+                        <button
+                            type="button"
+                            className={`users__button button ${isFetching && 'button--disabled'}`}
+                            disabled={isFetching && true}
+                            onClick={this.handleNextUsersList}
+                        >
+                            Show more
+                        </button>
+                    )}
+                </Container>
+            </section>
         );
     }
 }

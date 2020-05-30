@@ -9,7 +9,6 @@ import Register from "../Register/RegisterContainer";
 import Footer from "../Footer/Footer";
 
 export default class App extends React.Component {
-    state = {};
 
     componentDidMount() {
         AOS.init({offset: 80});
