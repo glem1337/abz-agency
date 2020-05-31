@@ -1,7 +1,7 @@
 import types from './UsersActionTypes';
 
 const initialState = {
-  users: [],
+  usersList: [],
   nextUrl: '',
   isFetching: false,
   error: null
@@ -19,7 +19,7 @@ const usersReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isFetching: false,
-        users: [...state.users, ...payload.usersList],
+        usersList: [...state.usersList, ...payload.usersList],
       };
     case types.SET_USERS_LOADING:
       return {

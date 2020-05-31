@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactTooltip from "react-tooltip";
 import defaultAvatar from '../../../assets/icons/photo-cover.svg';
+import {formatPhone} from "../../../utils/format/format";
 
 const User = ({user}) => (
     <div className="user">
@@ -18,7 +19,7 @@ const User = ({user}) => (
             <p className="user__email" data-tip={user.email}>{user.email}</p>
             <ReactTooltip border={false} place={'bottom'} className={'user__tooltip'}/>
             <p className="user__phone">{
-                user.phone.replace(/(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4 $5')}
+                formatPhone(user.phone)}
             </p>
         </div>
     </div>
