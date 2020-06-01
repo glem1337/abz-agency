@@ -4,6 +4,7 @@ import configureStore from 'redux-mock-store'
 import {UsersContainer} from "./UsersContainer";
 import {Provider} from 'react-redux';
 
+// TODO написать тест при нажатии на Load More и протестировать reducer
 
 describe('Users container', () => {
 
@@ -21,6 +22,35 @@ describe('Users container', () => {
         error: null,
         getUsers: () => {}
     };
+
+    describe('Users container dispatch `getUsers()` on click Load More', () => {
+        let usersContainer, mockFunc;
+        beforeEach(() => {
+            mockFunc = jest.fn();
+            const nextProps = {
+                ...props,
+                getUsers: mockFunc,
+                nextUrl: 'https://site.com',
+            };
+            usersContainer = shallow(<UsersContainer {...nextProps} />);
+        });
+
+        it('renders properly', () => {
+            expect(usersContainer).toMatchSnapshot();
+        });
+
+        it('dispatches the `getUsers()` method on click', () => {
+            usersContainer.find('.users__button').simulate('click');
+            expect(mockFunc).toHaveBeenCalledTimes(2);
+        });
+
+        afterEach(() => {
+            usersContainer.unmount();
+            mockFunc = null;
+        });
+
+    });
+
 
     describe('Users container state', () => {
         const mockStore = configureStore();
@@ -42,10 +72,10 @@ describe('Users container', () => {
     });
 
     describe('Users container initial', () => {
-        const mockFetchGetUsers = jest.fn();
+        const mockFunc = jest.fn();
         const nextProps = {
             ...props,
-            getUsers: mockFetchGetUsers,
+            getUsers: mockFunc,
         };
         const usersContainer = shallow(<UsersContainer {...nextProps} />);
 
@@ -53,8 +83,8 @@ describe('Users container', () => {
             expect(usersContainer).toMatchSnapshot();
         });
 
-        it('dispatches the `getUsers()` method it receives from props', () => {
-            expect(mockFetchGetUsers).toHaveBeenCalledTimes(1);
+        it('dispatches the `getUsers()` method in `componentDidMount()`', () => {
+            expect(mockFunc).toHaveBeenCalledTimes(1);
         });
 
     });
@@ -91,6 +121,31 @@ describe('Users container', () => {
 
         it('renders properly', () => {
             expect(usersContainer).toMatchSnapshot();
+        });
+
+    });
+
+    describe('Users container with next url', () => {
+        let usersContainer;
+        const nextProps = {
+            ...props,
+            nextUrl: 'https://site.com',
+        };
+
+        beforeEach(() => {
+            usersContainer = shallow(<UsersContainer {...nextProps} />);
+        });
+
+        it('renders properly', () => {
+            expect(usersContainer).toMatchSnapshot();
+        });
+
+        it('button Load More renders', () => {
+            expect(usersContainer.find('.users__button')).toHaveLength(1);
+        });
+
+        afterEach(() => {
+            usersContainer.unmount();
         });
 
     });

@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Users container Users container dispatch \`getUsers()\` on click Load More renders properly 1`] = `ShallowWrapper {}`;
+
 exports[`Users container Users container initial renders properly 1`] = `ShallowWrapper {}`;
 
 exports[`Users container Users container isFetching renders properly 1`] = `ShallowWrapper {}`;
@@ -9,3 +11,5 @@ exports[`Users container Users container state renders properly 1`] = `ShallowWr
 exports[`Users container Users container with Error message renders properly 1`] = `ShallowWrapper {}`;
 
 exports[`Users container Users container with UsersList renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`Users container Users container with next url renders properly 1`] = `ShallowWrapper {}`;
