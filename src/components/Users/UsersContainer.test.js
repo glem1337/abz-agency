@@ -4,8 +4,6 @@ import configureStore from 'redux-mock-store'
 import {UsersContainer} from "./UsersContainer";
 import {Provider} from 'react-redux';
 
-// TODO написать тест при нажатии на Load More и протестировать reducer
-
 describe('Users container', () => {
 
     const initialState = {
@@ -50,8 +48,7 @@ describe('Users container', () => {
         });
 
     });
-
-
+    
     describe('Users container state', () => {
         const mockStore = configureStore();
         const store = mockStore(initialState);
