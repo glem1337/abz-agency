@@ -21,6 +21,8 @@
 - classnames;
 - jest;
 - enzyme;
+- redux-mock-store;
+- moxios;
 
 
 ## Технические требования

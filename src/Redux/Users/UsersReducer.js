@@ -1,5 +1,7 @@
 import types from './UsersActionTypes';
 
+// TODO написать тесты
+
 const initialState = {
   usersList: [],
   nextUrl: '',

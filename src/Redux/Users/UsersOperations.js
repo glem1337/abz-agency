@@ -5,7 +5,6 @@ import {
     setUsersError,
     setUsers,
     setNextUrl,
-    resetUsersData
 } from './UsersActions';
 
 const getUsers = (nextUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6') => async dispatch => {
@@ -20,9 +19,4 @@ const getUsers = (nextUrl = 'https://frontend-test-assignment-api.abz.agency/api
     }
 };
 
-const updateUsers = (nextUrl) => async dispatch => {
-    dispatch(resetUsersData());
-    dispatch(getUsers(nextUrl));
-};
-
-export default {getUsers, updateUsers};
+export default {getUsers};

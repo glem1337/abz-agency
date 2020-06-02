@@ -4,6 +4,7 @@ import {usersApi} from "../../api/api";
 import {reset} from 'redux-form'
 import {connect} from "react-redux";
 import usersOperations from '../../Redux/Users/UsersOperations';
+import {resetUsersData} from '../../Redux/Users/UsersActions';
 
 const INITIAL_STATE = {
     photoFileName: 'Upload your photo',
@@ -45,7 +46,7 @@ class RegisterContainer extends React.Component {
         const token = await usersApi.getToken();
         values.token = token;
         const userAddResponse = await usersApi.addUser(values)
-        const {updateUsers} = this.props;
+        const {getUsers, resetUsersData} = this.props;
 
         let nextUrl = 'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=6';
         if (window.innerWidth < 768) {
@@ -58,7 +59,8 @@ class RegisterContainer extends React.Component {
                     ...INITIAL_STATE,
                 });
                 dispatch(reset('register'));
-                updateUsers(nextUrl);
+                dispatch(resetUsersData());
+                getUsers(nextUrl);
                 break;
             case 'Network Error':
                 this.setState({
@@ -112,7 +114,8 @@ class RegisterContainer extends React.Component {
 }
 
 const mapDispatchToProps = {
-    updateUsers: usersOperations.updateUsers,
+    getUsers: usersOperations.getUsers,
+    resetUsersData,
 };
 
 export default connect(null, mapDispatchToProps)(RegisterContainer);

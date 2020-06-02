@@ -1,4 +1,3 @@
-import React from 'react';
 import types from '../UsersActionTypes';
 import {setUsersLoading, setUsersError, setNextUrl, setUsers, resetUsersData} from '../UsersActions';
 
