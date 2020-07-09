@@ -13,7 +13,7 @@
 - react-redux;
 - redux;
 - redux-form;
-- redux-thunk;
+- ~~redux-thunk~~ redux-saga;
 - react-tooltip;
 - react-scrollspy;
 - axios;

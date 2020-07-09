@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import UsersList from './UsersList/UsersList';
-import usersOperations from '../../Redux/Users/UsersOperations';
+import {getUsers} from '../../Redux/Users/UsersActions';
 import usersSelectors from '../../Redux/Users/UsersSelectors';
 import {Container} from "react-bootstrap";
 import Loading from "../common/Loading/Loading";
@@ -58,7 +58,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-    getUsers: usersOperations.getUsers,
+    getUsers,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);

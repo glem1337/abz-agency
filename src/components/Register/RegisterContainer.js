@@ -3,8 +3,7 @@ import Register from './Register';
 import {usersApi} from "../../api/api";
 import {reset} from 'redux-form'
 import {connect} from "react-redux";
-import usersOperations from '../../Redux/Users/UsersOperations';
-import {resetUsersData} from '../../Redux/Users/UsersActions';
+import {resetUsersData, getUsers} from '../../Redux/Users/UsersActions';
 
 const INITIAL_STATE = {
     photoFileName: 'Upload your photo',
@@ -114,7 +113,7 @@ class RegisterContainer extends React.Component {
 }
 
 const mapDispatchToProps = {
-    getUsers: usersOperations.getUsers,
+    getUsers,
     resetUsersData,
 };
 

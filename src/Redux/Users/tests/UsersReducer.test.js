@@ -73,5 +73,4 @@ describe('Users reducer test', () => {
         expect(reducer(initialState, action)).toEqual(initialState);
     });
 
-
 });
